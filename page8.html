@@ -1,0 +1,83 @@
+<!Doctype html>
+<html>
+  <head>
+      <title>  vue js example.</title>
+      <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+  </head>
+  <body>
+
+    <div id="vue-instance">
+
+      <span>Message: {{ msg }}</span>
+      
+      <span>This will never change: {{* msg }}</span>
+
+      <div>{{{ raw_html }}}</div>
+
+
+      <div id="item-{{ id }}"></div>
+
+      {{ number + 1 }}
+      {{ ok ? 'YES' : 'NO' }}
+      {{ message.split('').reverse().join('') }}
+
+      <!-- this is a statement, not an expression: -->
+      {{ var a = 1 }}
+      <!-- flow control won't work either, use ternary expressions -->
+      {{ if (ok) { return message } }}
+
+
+
+      {{ message | capitalize }}
+
+      {{ message | filterA | filterB }}
+
+      {{ message | filterA 'arg1' arg2 }}
+
+      <a v-bind:href="url"></a>
+      <a v-on:click="doSomething">
+
+       <a v-bind:href.literal="/a/b/c"></a>
+        <!-- href="/a/b/c" -->
+
+
+
+        <!-- full syntax -->
+        <a v-bind:href="url"></a>
+        <!-- shorthand -->
+        <a :href="url"></a>
+        or
+        <!-- full syntax -->
+        <button v-bind:disabled="someDynamicCondition">Button</button>
+        <!-- shorthand -->
+        <button :disabled="someDynamicCondition">Button</button>
+
+
+        <!-- full syntax -->
+        <a v-on:click="doSomething"></a>
+        <!-- shorthand -->
+        <a @click="doSomething"></a>
+
+
+
+    </div>
+
+    <script type="text/javascript">
+      var vm = new Vue({
+        el : "#vue-instance",
+        data: {
+          greeting: "Hellow world!"
+        }
+      });
+
+/*    open dev toolbar and type in console 
+    vm.greeting="I am testing..." 
+    this will change value of model or object greeting in screen.
+*/
+    </script>
+ 
+
+
+  </body>
+</html>

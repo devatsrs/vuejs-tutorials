@@ -1,0 +1,36 @@
+    <!Doctype html>
+<html>
+  <head>
+      <title>  vue js example.</title>
+      <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+  </head>
+  <body>
+
+    <div id="vue-instance">
+         <ol>
+
+           <todo-item></todo-item>
+           <todo-item></todo-item>
+           <todo-item></todo-item>
+
+        </ol>
+
+    </div>
+
+    <script type="text/javascript">
+
+      // Define a new component called todo-item
+      Vue.component('todo-item', {
+
+           template: '<li>This is a todo</li>'
+      });
+      // create a root instance
+      new Vue({
+          el: '#vue-instance'
+      });
+
+    </script>
+
+  </body>
+</html>

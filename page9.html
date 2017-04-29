@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+  <head>
+      <title>  vue js example - Computed Properties</title>
+      <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+  </head>
+  <body>
+
+    <div id="vue-instance">
+
+         a={{ a }}, b={{ b }}
+
+
+    </div>
+
+    <script type="text/javascript">
+      var vm = new Vue({
+        el : "#vue-instance",
+        data: {
+          a :  1
+        } ,
+        computed: {
+            b : function () {
+                // `this` points to the vm instance
+                return this.a  + 1 ;
+            }
+        }
+      });
+
+        // also check ......
+
+          var vm = new Vue({
+            el: '#demo',
+            data: {
+              firstName: 'Foo',
+              lastName: 'Bar',
+              fullName: 'Foo Bar'
+            }
+          })
+          vm.$watch('firstName', function (val) {
+            this.fullName = val + ' ' + this.lastName
+          })
+          vm.$watch('lastName', function (val) {
+            this.fullName = this.firstName + ' ' + val
+          })
+
+          //        simplified way is as following ....
+
+          var vm = new Vue({
+            el: '#demo',
+            data: {
+              firstName: 'Foo',
+              lastName: 'Bar'
+            },
+            computed: {
+              fullName: function () {
+                return this.firstName + ' ' + this.lastName
+              }
+            }
+          })
+
+   </script>
+ 
+
+
+  </body>
+</html>

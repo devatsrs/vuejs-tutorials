@@ -1,0 +1,50 @@
+<!Doctype html>
+<html>
+  <head>
+      <title>vue.js - Binding HTML Classes</title>
+      <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+  </head>
+  <body>
+
+    <div id="vue-instance">
+
+       <div class="static" :class="{ 'class-a': isA, 'class-b': isB }"></div>
+        
+        <div v-bind:class="classObject"></div>
+        <br>  
+        We can pass an Array to v-bind:class to apply a list of classes:
+
+        <div :class="[classA, classB]">
+
+        <div v-bind:class="[classA, isB ? classB : '']">
+  
+    </div>
+
+    <script type="text/javascript">
+      var vm = new Vue({
+        el : "#vue-instance",
+        data : {
+            isA: false,
+            isB: true,
+            classObject: {
+                'class-a': true,
+                'class-b': false
+              }
+
+              ,
+                classA: 'class-a',
+                classB: 'class-b'
+
+
+          } ,
+         
+      });
+ 
+
+   </script>
+ 
+
+
+  </body>
+</html>

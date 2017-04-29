@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+  <head>
+      <title> vue js example.</title>
+      <script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+  </head>
+  <body>
+
+    <div id="vue-instance">
+
+        {{message}}
+        <button type="button"  v-on:click="reverseMessage"  >Reverse</button>
+
+     </div>
+
+    <script type="text/javascript">
+      var vm = new Vue({
+        el : "#vue-instance",
+        data: {
+          message: 'Hello Vue.js!'
+        },
+        methods: {
+          reverseMessage : function() {
+            this.message = this.message.split('').reverse().join('');
+          }
+        }
+      });
+    </script>
+
+    <!-- In the console, enter app4.todos.push({ text: 'New item' }). You should see a new item appended to the list. -->
+
+  </body>
+</html>
